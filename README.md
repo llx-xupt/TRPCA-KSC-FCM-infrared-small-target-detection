@@ -1,43 +1,45 @@
-# Enhanced Infrared Small Target Detection via TRPCA-KSC-FCM
+# Enhanced Infrared Small Target Detection via Tensor Decomposition and Kernelized Fuzzy Clustering
 
-This repository contains the MATLAB implementation for the infrared small target detection algorithm described in the paper: **"Enhanced Infrared Small Target Detection via Tensor Decomposition and Kernelized Fuzzy Clustering"**.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18335917.svg)](https://doi.org/10.5281/zenodo.18335917)
 
-## Overview
+## 📄 Paper Association
+**Important Note**: This source code and dataset are directly associated with the manuscript submitted to **The Visual Computer**:
+> **"Enhanced Infrared Small Target Detection via Tensor Decomposition and Kernelized Fuzzy Clustering"**
 
-The proposed method combines **Tensor Robust Principal Component Analysis (TRPCA)** and **Kernelized Fuzzy C-Means (KSC-FCM)** to achieve robust target detection in complex backgrounds. The algorithm effectively separates the sparse target from low-rank backgrounds and refines target boundaries through local kernel-based clustering.
+If you use this code, the TRPCA-KSC-FCM framework, or the provided dataset in your research, please cite the aforementioned manuscript.
 
-## Main Features
+## 🌟 Overview
+This repository provides the official MATLAB implementation of a robust infrared small target detection framework. It integrates **Tensor Robust Principal Component Analysis (TRPCA)** with **Kernelized Spatially Constrained Fuzzy Clustering (KSC-FCM)** to address challenges in complex infrared scenarios.
 
-* **TRPCA Separation**: Decomposes the image tensor into a low-rank background and a sparse target component using Fast Fourier Transform (FFT) optimization.
-* **MDPC Seed Detection**: Automatically identifies potential target locations using Multidimensional Density Peak Clustering.
-* **KSC-FCM Segmentation**: Performs precise local segmentation using a kernelized fuzzy clustering approach in a sliding window (default 11x11) around seeds.
-* **Target Enhancement**: A fusion strategy to suppress residual clutter and enhance target saliency.
+### Key Technical Components:
+* **TRPCA Model**: Combines Partial Sum of Tubal Nuclear Norm (PSTNN) and high-order Total Variation (TV) for effective background suppression.
+* **MDPC Detection**: Rapidly locates high-confidence candidate target regions using Multidimensional Density Peak Clustering.
+* **KSC-FCM Segmentation**: Enhances target contour precision by addressing non-linear separability through kernelized clustering.
+* **Target Enhancement Fusion**: A strategic fusion of original and sparse components to maximize target saliency.
 
-## Repository Structure
+## 🛠 Prerequisites & Dependencies
+* **Software**: MATLAB (Tested on R2018b or later).
+* **Toolboxes**: Image Processing Toolbox.
 
-* `demo.m`: The main entry script to run a detection example.
-* `Utils/`: Contains core algorithm modules including the TRPCA model and clustering utilities.
-* `Data/`: Directory for input images (e.g., `test_1.png`).
+## 🚀 Usage Guidelines
+1.  **Clone the Repository**: Download or clone this project to your local machine.
+2.  **Environment Setup**: Open MATLAB and set the project root directory as the current working directory.
+3.  **Run Demo**: Execute the `demo.m` script. It will automatically add necessary paths and process the sample image `test_1.png`.
+4.  **Analyze Results**: The script will output the original image, the generated saliency map, and the final binary detection result.
 
-## Getting Started
+## 📂 Repository Structure
+* `demo.m`: Main entry point for replicating experimental results.
+* `Utils/`: Core algorithm implementations (TRPCA, KSC-FCM, MDPC).
+* `Data/`: Contains the sample infrared dataset used for evaluation.
 
-### Prerequisites
-* MATLAB (R2018b or later recommended).
-* Image Processing Toolbox.
+## 🔗 Citation
+Please cite this work using the following format (BibTeX):
 
-### Execution
-1.  Clone the repository.
-2.  Open MATLAB and set the project folder as the current directory.
-3.  Run the `demo.m` script. The script will automatically add the `Utils/` path and process the sample image.
-
-## Key Parameters
-
-You can adjust the following parameters in `TRPCA_KSC_FCM.m`:
-* `lambda`: Penalty parameter for the sparse component (default: 0.85).
-* `nSeeds`: Maximum number of candidate seeds for MDPC (default: 10).
-* `patchSize`: Size of the image patches for tensor construction (default: 50).
-* `kernelType`: Kernel function for KSC-FCM ('rbf', 'poly', or 'linear').
-
-## License
-
-This project is released under the MIT License.
+```bibtex
+@article{wu2026enhanced,
+  title={Enhanced Infrared Small Target Detection via Tensor Decomposition and Kernelized Fuzzy Clustering},
+  author={Wu, Chengmao and Liu, Longxin},
+  journal={The Visual Computer},
+  year={2026},
+  note={DOI: 10.5281/zenodo.18335917}
+}
