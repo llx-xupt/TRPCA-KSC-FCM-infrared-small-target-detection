@@ -41,5 +41,5 @@ Please cite this work using the following format (BibTeX):
   author={Wu, Chengmao and Liu, Longxin},
   journal={The Visual Computer},
   year={2026},
-  note={DOI: 10.5281/zenodo.18335917}
+  note={DOI: 10.5281/zenodo.18335918}
 }
